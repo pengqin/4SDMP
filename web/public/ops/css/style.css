@@ -1,0 +1,105 @@
+body {
+	padding-top: 40px;
+	min-width: 960px;
+}
+h5, hr {
+	margin: 3px;
+}
+.menus {
+	min-height: 400px;
+	height: 400px;
+}
+.menus a {
+	padding-left: 24px;
+}
+.menus .sub a {
+	padding-left: 48px;
+}
+.menus a.actived {
+	font-weight: bold;
+}
+
+/*消息提示*/
+#gymMessage {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 40px;
+	z-index: 9999;
+}
+#gymMessage .pull-right {
+	cursor: pointer;
+	margin-right: 5px;
+}
+/* 内容区域 */
+.gymContent {
+	padding-top: 10px;
+}
+/* 表格 */
+.table .gymGridLik {
+	font-weight: bold;
+	cursor: pointer;
+}
+.table .active td{
+	background-color: #eee;
+}
+/*属性表格*/
+.gymprops {
+	margin: auto;
+	width: 100%;
+	margin-bottom: 30px;
+}
+.gymprops td {
+	padding-top: 10px;
+}
+.gymprops .required {
+	color: red;
+	padding-left: 5px;
+	font-size: 14px;
+}
+.gymprops label {
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+.gymprops .desc {
+	display: block;
+	color: red;
+}
+.gymprops .check {
+	position: relative;
+	margin: 0px;
+}
+.gymprops .prop {
+	display:inline-block;
+	margin-bottom: 0px;
+}
+.gymprops .progress {
+	margin-bottom: 2px;
+}
+.gymprops input.ng-invalid {
+	border: 2px solid red;
+}
+.gymprops .rulelevel {
+	cursor: pointer;
+	margin-right: 5px;
+}
+.gymprops textarea {
+	margin: 0px;
+}
+.buttons {
+	margin: 10px;
+}
+.buttons .querys {
+	margin: 0px;
+} 
+.employees-select button {
+	margin: 3px;
+}
+
+/*课程表*/
+table.schedule {
+	width: 100%;
+}
+table.schedule td{
+	min-width: 12%;
+}

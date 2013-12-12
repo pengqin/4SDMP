@@ -1,0 +1,58 @@
+<div class="row-fluid" ng-show="!club.updateobj">
+	<div class="span12">数据加载中,请稍候...</div>
+</div>
+<div class="row-fluid" ng-show="club.updateobj">
+	<div class="span12">
+		<form name="updateClubForm">
+		<table class="gymprops">
+
+		<tr>
+		<td width="180px"><label>编号:</label></td>
+		<td>{{club.updateobj._id}}</td>
+		</tr>
+
+		<td><label for="club-name">会所名称:</label></td>
+		<td>
+			<input ng-model="club.updateobj.name" class="input-xlarge" id="club-name" required placeholder="请输入姓名">
+			<span class="required">*</span></td>
+		</tr>
+
+		<tr>
+		<td><label for="club-gender">微信Open ID:</label></td>
+		<td>
+			{{club.updateobj.openId}}
+		</td>
+		</tr>
+
+		<td><label for="club-mobile">负责人手机号码及账号:</label></td>
+		<td>
+			{{club.updateobj.owner.mobile}}
+		</tr>
+
+		<td><label for="club-owner">负责人姓名:</label></td>
+		<td>
+			<input ng-model="club.updateobj.owner.name" class="input-xlarge" id="club-owner" required placeholder="请输入负责人姓名">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td><label for="club-email">负责人联系邮箱:</label></td>
+		<td>
+			<input ng-model="club.updateobj.owner.email" class="input-xlarge" id="club-email" required placeholder="请输入邮箱">
+			<span class="required">*</span></td>
+		</tr>
+
+		</table>
+		</form>
+    </div>
+</div>
+<div class="row-fluid" ng-show="club.updateobj">
+	<div class="span12">
+		<button class="btn" type="button"
+				ng-class="{'btn-primary': updateClubForm.$valid}" 
+				ng-click="club.update()"
+				ng-disabled="!updateClubForm.$valid">
+			<i class="icon-save"></i>保存
+		</button>
+		<a href="#/club" class="btn"><i class="icon-list"></i>返回</a>
+    </div>
+</div>

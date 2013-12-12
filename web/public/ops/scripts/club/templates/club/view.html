@@ -1,0 +1,14 @@
+<br/>
+<ul class="nav nav-tabs" id="clubTab">
+  <li ng-class="{'active': club.tab == 'basic'}" ng-click="club.tab = 'basic'"><a href="javascript:void(0)" data-toggle="tab">基本信息</a></li>
+  <li ng-class="{'active': club.tab == 'employee'}" ng-click="club.tab = 'employee'"><a href="javascript:void(0)" data-toggle="tab">员工维护</a></li>
+  <li ng-class="{'active': club.tab == 'store'}" ng-click="club.tab = 'store'"><a href="javascript:void(0)" data-toggle="tab">门店维护</a></li>
+  <li ng-class="{'active': club.tab == 'schedule'}" ng-click="club.tab = 'schedule'"><a href="javascript:void(0)" data-toggle="tab">课程安排</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane" ng-class="{'active': club.tab == 'basic'}"><div gym-club-edit></div></div>
+  <div class="tab-pane" ng-class="{'active': club.tab == 'employee'}"><div gym-club-employee-list></div></div>
+  <div class="tab-pane" ng-class="{'active': club.tab == 'store'}"><div gym-club-store-list></div></div>
+  <div class="tab-pane" ng-class="{'active': club.tab == 'schedule'}"><div gym-club-schedule-setting></div></div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row-fluid">
+	<div class="span12 buttons">
+		<button class="btn btn-primary" type="button"
+				ng-click="club.refresh()">
+			<i class="icon-refresh"></i>刷新
+		</button>
+		<a href="#/club/new" class="btn btn-primary"><i class="icon-plus"></i>新增会所</a>
+		<button class="btn" type="button"
+				ng-class="{'btn-danger': club.selectedItem != null}"
+				ng-click="club.confirmEnabled()" ng-disabled="club.selectedItem == null">
+			<i class="icon-stop"></i>启用/暂停
+		</button>
+		<input type="text" class="querys" placeholder="请输入会所名字" title="请输入会所名字" ng-model="club.query">
+		<button class="btn btn-primary" type="button"
+				ng-click="club.queryChanged(club.query)">
+			<i class="icon-search"></i>查询
+		</button>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="block block-without-border span12">
+		<table at-table class="table table-bordered" pagination="clubPagination">
+		  <thead></thead>
+		  <tbody>
+		    <tr ng-click="club.selectedItem = item" ng-class="{'active': club.selectedItem == item}">
+				<td at-implicit sortable title="会所名字" attribute="name" class="gymGridLik" ng-click="club.showPage(item)"></td>
+				<td at-implicit sortable title="负责人" attribute="owner.name"></td>
+				<td at-implicit sortable title="联系电话" attribute="owner.mobile"></td>
+				<td at-implicit sortable title="Email" attribute="owner.email"></td>
+				<td at-implicit sortable title="员工人数" attribute="employees.length"></td>
+				<td sortable title="是否启用">
+					{{club.isEnabled(item)}}
+				</td>
+		    </tr>
+		  </tbody>
+		</table>
+
+		<at-pagination items-per-page="15" instance="clubPagination" list="club.filteredData"></at-pagination>
+    </div>
+</div>

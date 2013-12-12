@@ -1,0 +1,46 @@
+<div class="row-fluid">
+	<div class="span12">
+		<br/>
+		<form name="createClubForm">
+		<table class="gymprops">
+
+		<td width="180px"><label for="club-name">会所名称:</label></td>
+		<td>
+			<input ng-model="club.newobj.name" class="input-xlarge" id="club-name" required placeholder="请输入姓名">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td><label for="club-mobile">负责人手机及登录账号:</label></td>
+		<td>
+			<input ng-model="club.newobj.owner.mobile" class="input-xlarge" id="club-mobile" required placeholder="请输入联系方式">
+			<span class="required">*</span></td>
+		</tr>
+
+
+		<td><label for="club-owner">负责人姓名:</label></td>
+		<td>
+			<input ng-model="club.newobj.owner.name" class="input-xlarge" id="club-owner" required placeholder="请输入负责人姓名">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td><label for="club-email">负责人联系邮箱:</label></td>
+		<td>
+			<input ng-model="club.newobj.owner.email" class="input-xlarge" id="club-email" required placeholder="请输入邮箱">
+			<span class="required">*</span></td>
+		</tr>
+
+		</table>
+		</form>
+    </div>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+		<button class="btn" type="button"
+				ng-class="{'btn-primary': createClubForm.$valid && club.isUnique}" 
+				ng-click="club.create()"
+				ng-disabled="!createClubForm.$valid || !club.isUnique">
+			<i class="icon-save"></i>保存
+		</button>
+		<a href="#/club" class="btn"><i class="icon-remove"></i>取消</a>
+    </div>
+</div>

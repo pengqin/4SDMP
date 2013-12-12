@@ -1,0 +1,18 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#">EverGym运营平台</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li ng-class="{'active': header.idx == 'welcome'}" ng-click="header.idx = 'welcome'"><a href="#welcome">首页</a></li>
+          <li ng-class="{'active': header.idx == 'club'}" ng-click="header.idx = 'club'"><a href="#club">会所管理</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

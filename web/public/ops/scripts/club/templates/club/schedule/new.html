@@ -1,0 +1,59 @@
+<div>
+	<div class="row-fluid" ng-show="!clubschedule.newschedule">
+		<div class="span12">数据加载中,请稍候...</div>
+	</div>
+	<div class="row-fluid" ng-show="clubschedule.newschedule">
+		<div class="span12">
+			<h5>服务设置</h5>
+			<form name="createScheduleForm">
+			<table class="gymprops">
+
+			<td width="150px"><label for="clubschedule-name">课程表描述:</label></td>
+			<td>
+				<input ng-model="clubschedule.newschedule.name" class="input-xlarge" id="clubschedule-name" required placeholder="请输入课程表描述:" value="课程表">
+				<span class="required">*</span></td>
+			</tr>
+
+			<td width="150px"><label for="clubschedule-sdate">开始日期:</label></td>
+			<td>
+				<div id="clubschedule-sdate" class="input-append date">
+				    <input ng-model="clubschedule.newschedule.sdate" type="text" readonly="readonly" placeholder="请选择开始日期"></input>
+				    <span class="add-on">
+				      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+				      </i>
+				    </span>
+			    </div>
+				<span class="required">*</span>
+			</td>
+			</tr>
+
+
+			<td width="150px"><label for="clubschedule-edate">结束日期:</label></td>
+			<td>
+				<div id="clubschedule-edate" class="input-append date">
+				    <input ng-model="clubschedule.newschedule.edate" type="text" readonly="readonly" placeholder="请选择开始日期"></input>
+				    <span class="add-on">
+				      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+				      </i>
+				    </span>
+			    </div>
+				<span class="required">*</span>
+			</td>
+			</tr>
+
+			</table>
+			</form>
+	    </div>
+	</div>
+	<div class="row-fluid" ng-show="clubschedule.newschedule">
+		<div class="span12">
+			<button class="btn" type="button"
+					ng-class="{'btn-primary': createScheduleForm.$valid}" 
+					ng-click="clubschedule.createSchedule()"
+					ng-disabled="!createScheduleForm.$valid">
+				<i class="icon-plus"></i>新增
+			</button>
+			<a href="javascript:void(0)" class="btn" ng-click="clubschedule.op = 'schedule'"><i class="icon-list"></i>取消</a>
+	    </div>
+	</div>
+</div>

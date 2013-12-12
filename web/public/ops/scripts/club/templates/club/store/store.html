@@ -1,0 +1,48 @@
+<div class="row-fluid" ng-show="store.list">
+	<div class="span12 buttons">
+		<button class="btn btn-primary" type="button"
+				ng-click="store.refresh()">
+			<i class="icon-refresh"></i>刷新
+		</button>
+		<a href="javascript:void(0)" class="btn btn-primary" ng-click="store.createPage()"><i class="icon-plus"></i>新增门店</a>
+		<button class="btn" type="button"
+				ng-class="{'btn-danger': store.selectedItem != null}"
+				ng-click="store.confirmEnabled()" ng-disabled="store.selectedItem == null">
+			<i class="icon-stop"></i>启用/暂停
+		</button>
+		<input type="text" class="querys" placeholder="请输入门店名字" title="请输入门店名字" ng-model="store.query">
+		<button class="btn btn-primary" type="button"
+				ng-click="store.queryChanged(store.query)">
+			<i class="icon-search"></i>查询
+		</button>
+		<a href="#/club" class="btn"><i class="icon-remove"></i>返回列表</a>
+    </div>
+</div>
+<div class="row-fluid" ng-show="store.list">
+    <div class="block block-without-border span12">
+		<table at-table class="table table-bordered" pagination="storePagination">
+		  <thead></thead>
+		  <tbody>
+		    <tr ng-click="store.selectedItem = item" ng-class="{'active': store.selectedItem == item}">
+				<td at-implicit sortable title="门店名称" attribute="name" class="gymGridLik" ng-click="store.showPage(item)"></td>
+				<td sortable title="门店电话">
+					{{item.phone}}
+				</td>
+				<td sortable title="经理">
+					{{item.manager.name}}
+				</td>
+				<td sortable title="经理电话">
+					{{item.manager.mobile}}
+				</td>
+				<td sortable title="是否启用">
+					{{store.isEnabled(item)}}
+				</td>
+				
+		    </tr>
+		  </tbody>
+		</table>
+
+		<at-pagination items-per-page="15" instance="storePagination" list="store.filteredData"></at-pagination>
+    </div>
+</div>
+<div gym-store-save ng-show="!store.list"></div>

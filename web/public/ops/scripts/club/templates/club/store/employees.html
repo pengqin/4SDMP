@@ -1,0 +1,8 @@
+<div class="employees-select">
+	<button title="{{item.name}} 手机:{{item.mobile}}"
+			ng-repeat="item in store.employees"
+		    class="btn btn-mini"
+		    ng-class="{'btn-primary': item.selected}"
+		    ng-disabled="item._id == store.saveobj.manager._id"
+		    ng-click="store.selectEmployee(item)" type="button">{{item.name}}</button>
+</div>

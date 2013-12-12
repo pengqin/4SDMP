@@ -1,0 +1,84 @@
+<div class="row-fluid" ng-show="!store.saveobj">
+	<div class="span12">数据加载中,请稍候...</div>
+</div>
+<div class="row-fluid" ng-show="store.saveobj">
+	<div class="span12">
+		<form name="saveStoreForm">
+		<table class="gymprops">
+
+		<td width="150px"><label for="store-name">门店名称:</label></td>
+		<td>
+			<input ng-model="store.saveobj.name" class="input-xlarge" id="store-name" required placeholder="请输入门店名称:">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td><label for="store-address">门店位置:</label></td>
+		<td>
+			<input ng-model="store.saveobj.address" class="input-xlarge" id="store-address" required placeholder="请输入门店位置">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td valign="top"><label for="store-route">门店交通指引:</label></td>
+		<td>
+			<textarea ng-model="store.saveobj.route" id="store-route" placeholder="请输入门店交通指引" rows="3" style="width:400px"></textarea>
+		</td>
+		</tr>
+
+		<td><label for="store-name">门店电话:</label></td>
+		<td>
+			<input ng-model="store.saveobj.phone" class="input-xlarge" id="store-phone" required placeholder="请输入门店电话">
+			<span class="required">*</span></td>
+		</tr>
+
+		<td valign="top"><label for="store-description">门店文字介绍:</label></td>
+		<td>
+			<textarea ng-model="store.saveobj.description" id="store-description" required placeholder="请输入门店文字介绍" rows="6" style="width:400px"></textarea>
+			<span class="required">*</span></td>
+		</tr>
+
+		<td valign="top"><label>活动场所:</label></td>
+		<td>
+			<div ng-repeat="room in store.saveobj.rooms" style="margin:3px 0px;">
+				<input ng-model="room.name" class="input-xlarge" required placeholder="请选择输入活动场所名称">
+				<a href="javascript:void(0)" ng-click="store.removeRoom(room)" ng-show="store.saveobj.rooms.length > 1">删除</a>
+			</div>
+			<a href="javascript:void(0)" ng-click="store.addRoom()">新增</a>
+		</td>
+		</tr>
+
+		<td valign="top"><label for="store-manager-name">部门经理:</label></td>
+		<td>
+			<input ng-model="store.saveobj.manager.name" class="input-xlarge" id="store-manager-name" ng-disabled="true" required placeholder="请选择部门经理">
+			<span class="required">*</span>
+			<br/>
+			<a href="javascript:void(0)" ng-click="store.showManager()">选择经理</a>
+			<a href="javascript:void(0)" ng-show="store.select == 'manager'" ng-click="store.select = 'none'">收起</a>
+			<div gym-store-employee-select ng-show="store.select == 'manager'"></div>
+		</td>
+		</tr>
+
+		<td valign="top"><label for="store-manager-employees">部门员工:</label></td>
+		<td>
+			<textarea class="input-xlarge" id="store-manager-employees" ng-disabled="true" ng-model="store.employeeNames" placeholder="请选择员工">
+			</textarea>
+			<br/>
+			<a href="javascript:void(0)" ng-click="store.showEmployees()">选择员工</a>
+			<a href="javascript:void(0)" ng-show="store.select == 'employees'" ng-click="store.select = 'none'">收起</a>
+			<div gym-store-employee-select ng-show="store.select == 'employees'"></div>
+		</tr>
+
+		</table>
+		</form>
+    </div>
+</div>
+<div class="row-fluid" ng-show="store.saveobj">
+	<div class="span12">
+		<button class="btn" type="button"
+				ng-class="{'btn-primary': saveStoreForm.$valid}" 
+				ng-click="store.save()"
+				ng-disabled="!saveStoreForm.$valid">
+			<i class="icon-save"></i>保存
+		</button>
+		<a href="javascript:void(0)" class="btn" ng-click="store.goback()"><i class="icon-list"></i>返回</a>
+    </div>
+</div>

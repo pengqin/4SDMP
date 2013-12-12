@@ -1,0 +1,32 @@
+<div>
+	<div class="row-fluid" ng-show="!clubschedule.saveservice">
+		<div class="span12">数据加载中,请稍候...</div>
+	</div>
+	<div class="row-fluid" ng-show="clubschedule.saveservice">
+		<div class="span12">
+			<h5>服务设置</h5>
+			<form name="saveServiceForm">
+			<table class="gymprops">
+
+			<td width="150px"><label for="clubschedule-name">服务名称:</label></td>
+			<td>
+				<input ng-model="clubschedule.saveservice.name" class="input-xlarge" id="clubschedule-name" required placeholder="请输入服务名称:">
+				<span class="required">*</span></td>
+			</tr>
+
+			</table>
+			</form>
+	    </div>
+	</div>
+	<div class="row-fluid" ng-show="clubschedule.saveservice">
+		<div class="span12">
+			<button class="btn" type="button"
+					ng-class="{'btn-primary': saveServiceForm.$valid}" 
+					ng-click="clubschedule.saveService()"
+					ng-disabled="!saveServiceForm.$valid">
+				<i class="icon-save"></i>保存
+			</button>
+			<a href="javascript:void(0)" class="btn" ng-click="clubschedule.op = 'schedule'"><i class="icon-list"></i>取消</a>
+	    </div>
+	</div>
+</div>

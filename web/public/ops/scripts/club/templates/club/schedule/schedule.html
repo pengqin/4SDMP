@@ -1,0 +1,35 @@
+<div>
+	<h5>课程表&nbsp;
+    	<button class="btn btn-mini"
+    		ng-class="{'btn-primary': clubschedule.room.name}"
+    		ng-click="clubschedule.createSchedulePage()"
+			ng-disabled="!clubschedule.room.name">新增课程表</button></h5>
+	<div style="height: 400px;">
+		<h4 style="color:red" ng-show="!clubschedule.schedule.name">请选择课程表</h4>
+		<div>
+			<div><span></span></div>
+			<table ng-show1="clubschedule.schedule.name" class="schedule" ng-show="clubschedule.schedule.name">
+				<tr>
+					<td width="200px">时段</td>
+					<td>周一</td>
+					<td>周二</td>
+					<td>周三</td>
+					<td>周四</td>
+					<td>周五</td>
+					<td>周六</td>
+					<td>周日</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
