@@ -3,7 +3,7 @@
  */
 var user = {mobile: '13811749917'};
 exports.index = function(req, res){
- 	res.render('wap/reservation/index', {title: "预约试驾", user: user});
+ 	res.render('wap/reservation/index', {title: "预约试驾", user: user, header: req.query.header === 'hide' ? false : true});
 };
 exports.repair = function(req, res){
  	res.render('wap/reservation/undone', {title: "预约维修", user: user});

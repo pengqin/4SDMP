@@ -1,11 +1,13 @@
 <%- include ../header %>
 <section id="profile_view">
+    <% if (header) { %>
     <header data-title="<%-title%>">
         <h1 class="title centered"><%-title%></h1>
         <!--nav class="on-right">
             <a href="#" data-view-menu="menus" data-icon="menu"></a>
         </nav-->
     </header>
+    <% } %>
 	<article id="profile-edit" class="list indented active">
         <div class="form">
             <label>姓名:</label>
