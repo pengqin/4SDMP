@@ -1,4 +1,5 @@
 module.exports = {
+  debug: true,
   port: 80,
   hostname: '127.0.0.1',
   timeout: {
