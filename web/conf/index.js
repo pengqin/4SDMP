@@ -11,7 +11,7 @@ module.exports = {
       dbname: '4sdmpdb',
   },
   site_root: 'http://localhost:3000',
-  upload_root: '/var/www/html/kindergarten/upload',
+  upload_root: '/var/www/web/upload',
   //upload_root: 'C:/upload/images',
   salt: '4sdmp1q2w3e4r5t6y7u8i9o0p',
   weixin: '4sdmp'
