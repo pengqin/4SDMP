@@ -9,8 +9,8 @@ var conf = require('../../conf');
 
 function helper_gateway(info, next) {
     var text = [
-        "如需【紧急救援】、【前往本店】、【周边服务】等服务请回复您的地理位置",
-        "如需【违章查询】、【出行出游】、【车险指南】、【指示灯大全】、【配件真伪查询】等服务请回复数字【1】"
+        "如需\n【紧急救援】\n【前往本店】\n【周边服务】\n等服务请回复您的地理位置\n",
+        "如需\n【违章查询】\n【出行出游】\n【车险指南】\n【指示灯大全】\n【配件真伪查询】\n等服务请回复数字【1】"
     ];
     info.wait("user upload position");
     return next(null, text.join("\n"));
