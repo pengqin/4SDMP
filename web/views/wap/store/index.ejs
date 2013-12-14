@@ -1,22 +1,36 @@
 <%- include ../header %>
 
-<section id="info" data-transition="slide">
+<section id="carousel" data-transition="slide">
     <header>
-        <div class="centered title">车型展示</div>
+        <div class="centered title">首页</div>
     </header>
-    <article id="car" class="active block" data-control="carousel">
+    <article id="cars" class="active block" data-control="carousel">
         <div>
             <div align="center">
-                <img src="http://lorempixel.com/320/418/food/">
+                <img src="/wap/images/car1.jpg">
             </div>
             <div align="center">
-                <img src="http://lorempixel.com/320/418/sports/">
+                <img src="/wap/images/car2.jpg">
+            </div>
+            <div align="center">
+                <img src="/wap/images/car3.jpg">
+            </div>
+            <div align="center">
+                <img src="/wap/images/car4.jpg">
             </div>
         </div>
     </article>
 </section>
 
 <script>
-window.readyhandler = function() {};
+window.readyhandler = function() {
+    var el = Lungo.dom('[data-control=carousel]').first()[0];
+    var slide = Lungo.Element.Carousel(el, function(index, element) {
+        Lungo.dom("section#carousel .title span").html(index + 1);
+    });
+    setInterval(function() {
+        slide.next();
+    }, 4000);
+};
 </script>
 <%- include ../footer %>
