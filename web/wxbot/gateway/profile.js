@@ -22,7 +22,7 @@ function profile_features(info, next) {
     }, {
         title: '我的预约',
         url: conf.site_root + '/wap/profile/'  + user.mobile +  '/password',
-        picUrl: conf.site_root + '/wap/images/profile_pwd.png?' + t,
+        picUrl: conf.site_root + '/wap/images/profile_reservation.png?' + t,
         description: '密码修改'
     }, {
         title: '提醒服务',
