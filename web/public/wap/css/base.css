@@ -1,9 +1,5 @@
 body{font:1.0em tahoma,arial,\5b8b\4f53;}
 
 #cars img {
-	width:98%;
-	margin-top:5px;
-	border:3px solid #ccc;
-    -moz-border-radius: 5px;   /* 圆的半径为边长的一半，即300px */
-    -webkit-border-radius: 5px;
+	width:100%;
 }

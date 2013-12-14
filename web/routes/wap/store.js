@@ -1,6 +1,6 @@
 var store = {name: '北京现代旗舰店'};
 exports.index = function(req, res){
- 	res.render('wap/store/index', {title: "车型展示", store: store});
+ 	res.render('wap/store/index', {title: "首页", store: store});
 };
 exports.activity = function(req, res){
  	res.render('wap/store/activity', {title: "热点活动", store: store});
