@@ -1,15 +1,10 @@
 /*
  * route to the wap
  */
-var defaultRoutes = require('./wap/index');
-var userRoutes = require('./wap/user.js');
+var profileRoutes = require('./wap/profile.js');
 
 module.exports = function(app) {
-	// the web gui for the end user
-	app.get('/wap', function(req, res) {
-		res.writeHead(200, {'Content-Type': 'text/plain'});
-  		res.end('Hello World\n');
-	});
-	app.get('/wap/club/:clubId', defaultRoutes.index);
-	app.get("/wap/club/:clubId/register", userRoutes.register);
+	app.get('/wap/profile/:id', profileRoutes.index);
+	app.get('/wap/profile/:id/password', profileRoutes.password);
+	app.get('/wap/profile/:id/reminder', profileRoutes.reminder);
 }

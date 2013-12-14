@@ -1,0 +1,36 @@
+<%- include ../header %>
+<section id="main_section">
+    <header data-title="个人资料">
+    </header>
+	<article id="profile-edit" class="list indented active">
+		<ul>
+			<li class="thumb big">
+	            <img src="http://cdn.tapquo.com/lungo/icon-144.png">
+	            <div>
+	                <strong>方进才 VIP</strong>
+	                <span class="text tiny opacity"><a href="tel:13812345678">13812345678</a></span>
+	                <small>
+	                     <a href="mailto:fangcj@qq.com">fangcj@qq.com</a>
+	                </small>
+	            </div>
+	        </li>
+		</ul>
+        <div class="form">
+            <label>Email:</label>
+            <input type="text" placeholder="请输入您的Email" class="border">
+
+            <label>性别:</label>
+            <label class="select border">
+                <select>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </label>
+
+            <br/>
+            <button class="anchor margin-bottom" data-icon="ok" data-label="保存"><span class="icon ok"></span></button>
+        </div>
+    </article>
+	<%- include menus %>
+</section>
+<%- include ../footer %>

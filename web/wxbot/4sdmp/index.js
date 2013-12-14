@@ -7,7 +7,7 @@ module.exports = function(webot) {
 	webot.set('4sdmp greeting', {
 		pattern: /^4sdmp$/i,
 		handler: function(info, next) {
-			next("永远健康!");
+			next("4S数字营销平台!");
 		}
 	});
 }

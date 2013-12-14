@@ -34,10 +34,10 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // WAP站点的页面流控制类
-//require("./routes")(app);
+require("./routes")(app);
 
 // REST API
-require("./rest")(app);
+//require("./rest")(app);
 
 // 回复机器人
 var webot = require('weixin-robot');
