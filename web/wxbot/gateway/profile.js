@@ -20,6 +20,11 @@ function profile_features(info, next) {
         picUrl: conf.site_root + '/wap/images/profile_pwd.png?' + t,
         description: '密码修改'
     }, {
+        title: '我的预约',
+        url: conf.site_root + '/wap/profile/'  + user.mobile +  '/password',
+        picUrl: conf.site_root + '/wap/images/profile_pwd.png?' + t,
+        description: '密码修改'
+    }, {
         title: '提醒服务',
         url: conf.site_root + '/wap/profile/' + user.mobile + '/reminder',
         picUrl: conf.site_root + '/wap/images/profile_reminder.png?' + t,
