@@ -18,7 +18,7 @@ module.exports = function(webot) {
                     }
                 );
             var messages = [
-                "欢迎使用本4S店营销平台。",
+                "感谢您使用本店微信服务",
                 link,
                 "回复数字使用本店服务：",
                 "【1】 预约服务",
