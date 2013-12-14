@@ -7,7 +7,7 @@
 var ejs = require('ejs');
 var conf = require('../../conf');
 
-function helper_gateway(info, wait) {
+function helper_gateway(info, next) {
     var text = [
         "如需【紧急救援】、【前往本店】、【周边服务】等服务请回复您的地理位置",
         "如需【违章查询】、【出行出游】、【车险指南】、【指示灯大全】、【配件真伪查询】等服务请回复数字【1】"
