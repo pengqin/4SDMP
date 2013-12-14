@@ -8,19 +8,20 @@ var ejs = require('ejs');
 var conf = require('../../conf');
 
 function profile_features(info, next) {
+    var user = info.session.user;
     return next(null, [{
         title: '个人资料',
-        url: conf.site_root + '/wap/profile/index',
+        url: conf.site_root + '/wap/profile/' + user.mobile + 'index',
         picUrl: conf.site_root + '/wap/images/profile.png',
         description: '个人资料'
     }, {
         title: '密码修改',
-        url: conf.site_root + '/wap/profile/password',
+        url: conf.site_root + '/wap/profile/'  + user.mobile +  '/password',
         picUrl: conf.site_root + '/wap/images/profile_icon.png',
         description: '密码修改'
     }, {
         title: '提醒服务',
-        url: conf.site_root + '/wap/profile/reminder',
+        url: conf.site_root + '/wap/profile/' + user.mobile + '/reminder',
         picUrl: conf.site_root + '/wap/images/profile_icon.png',
         description: '提醒服务'
     }]);

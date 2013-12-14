@@ -40,6 +40,7 @@ function mobile_input_prompt(info, next) {
 function ensure_user_is_register (info, next) {
     //if (info.session.member || info.session.coacher) { return next(); }
 
+    info.session.user = {mobile: 13812345678};
     next();
     /*
     UserServices.queryByOpenId({clubOpenId: info.sp, userOpenId: info.uid}).then(function(user) {
