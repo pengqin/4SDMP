@@ -1,3 +1,4 @@
+var ejs = require('ejs');
 var utils = require("./utils");
 var conf = require('../conf');
 
@@ -10,9 +11,15 @@ module.exports = function(webot) {
             return true;
         },
         handler: function(info, next) {
+            var link = ejs.render(
+                    '<a href="<%- url%>">点击这里了解最新车讯</a>\n', 
+                    {
+                        url: conf.site_root + '/wap/store/1'
+                    }
+                );
             var messages = [
                 "欢迎使用本4S店营销平台。",
-                "<a href=" + conf.site_root + '/wap/store/1' +">点击这里了解最新资讯</a>\n",
+                link,
                 "回复数字使用本店服务：",
                 "【1】 预约服务",
                 "【2】 交易服务",
