@@ -2,4 +2,12 @@ body{font:1.0em tahoma,arial,\5b8b\4f53;}
 
 #cars img {
 	width:100%;
+	max-width: 600px;
+}
+#cars .desc p {
+	text-indent: 2em;
+	padding: 5px 10px;
+}
+#cars .buttons {
+	padding: 5px;
 }

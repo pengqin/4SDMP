@@ -1,22 +1,35 @@
 <%- include ../header %>
 
 <section id="carousel" data-transition="slide">
-    <header>
-        <div class="centered title">首页</div>
-    </header>
     <article id="cars" class="active block" data-control="carousel">
-        <div>
-            <div align="center">
+        <div class="desc">
+            <div>
                 <img src="/wap/images/car1.jpg">
+                <p>现代i30外观线条简洁流畅，车前盖上隆起的硬朗线条，颇有肌肉感，造型特点像欧系车。现代i30共搭配了1.6L\2.0L两款不同排量的发动机，其中1.6L发动机所释放的最大功率为123kW，最大扭矩155N·m；动力更为卓越的2.0L车型，最大功率143kW，最大扭矩186N·m；两款发动机均带有CVVT可变气门正时技术。</p>
+                <div class="buttons">
+                    <a href="#" class="button anchor margin-bottom">预约试驾</a>
+                </div>
             </div>
-            <div align="center">
+            <div>
                 <img src="/wap/images/car2.jpg">
+                <p>2014款雅科仕延续了韩系的设计风格，初见并不惊艳，但细品却独有韵味。经过改进的直瀑式进气格栅，优化了镀铬范围，加之全新设计的轮毂造型，使整车看起来低调简约，又不失威严大气。此外，车外后视镜、尾灯区域以及前保险杠造型上的变化，也使整车线条更趋精致流畅。</p>
+                <div class="buttons">
+                    <a href="#" class="button anchor margin-bottom">预约试驾</a>
+                </div>
             </div>
-            <div align="center">
+            <div>
                 <img src="/wap/images/car3.jpg">
+                <p>即使凯尊和雅尊共享了很多东西，但从外观上你肯定不会混淆它们，起亚的虎啸设计和现代的流体雕塑设计，都洋溢着个性与张扬。当然，定位更高的雅尊不能像八代索纳塔那么流线和动感，为了体现稳重和大气，它更显方正，更显厚重，贴切体现了它的定位。</p>
+                <div class="buttons">
+                    <a href="#" class="button anchor margin-bottom">预约试驾</a>
+                </div>
             </div>
-            <div align="center">
+            <div>
                 <img src="/wap/images/car4.jpg">
+                <p>新款ix35在外观和内饰上进行了小幅改动，动力沿用现款。新车预计10月上市，共新增3款车型，售价区间与现款保持一致仍为16.98-24.28万元。</p>
+                <div class="buttons">
+                    <a href="#" class="button anchor margin-bottom">预约试驾</a>
+                </div>
             </div>
         </div>
     </article>
@@ -28,9 +41,6 @@ window.readyhandler = function() {
     var slide = Lungo.Element.Carousel(el, function(index, element) {
         Lungo.dom("section#carousel .title span").html(index + 1);
     });
-    setInterval(function() {
-        slide.next();
-    }, 10000);
 };
 </script>
 <%- include ../footer %>
