@@ -1,6 +1,9 @@
 <%- include ../header %>
 <section id="main_section">
     <header data-title="个人资料">
+        <nav class="on-right">
+            <a href="javascript:void(0)" data-view-menu="menus" data-icon="menu"></a>
+        </nav>
     </header>
 	<article id="profile-edit" class="list indented active">
 		<ul>
@@ -28,9 +31,25 @@
             </label>
 
             <br/>
-            <button class="anchor margin-bottom" data-icon="ok" data-label="保存"><span class="icon ok"></span></button>
+            <button id="saveBtn" class="anchor margin-bottom" data-icon="ok" data-label="保存"><span class="icon ok"></span></button>
         </div>
     </article>
 	<%- include menus %>
 </section>
+<script>
+
+window.readyhandler = function() { 
+    $$('#saveBtn').tap(function() {
+        Lungo.Notification.show(
+            "check",                //Icon
+            "保存成功",              //Title
+            3,
+            function() {
+                Lungo.Notification.hide();
+            }
+        );
+    });
+};
+
+</script>
 <%- include ../footer %>

@@ -1,8 +1,17 @@
+<script src="/wap/vendor/lungo/quo.js"></script>
+<script src="/wap/vendor/lungo/lungo.js"></script>
 <script>
-Lungo.init({});
+// for weixin
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 	//WeixinJSBridge.call('hideOptionMenu');
 	WeixinJSBridge.call('hideToolbar');
+});
+
+Lungo.init({});
+Lungo.ready(function() {
+	if (window.readyhandler) {
+		window.readyhandler();
+	}
 });
 </script>
 </body>
