@@ -31,7 +31,7 @@ module.exports = function(webot) {
 	// 修改个人资料提示语
 	webot.set('user profile links start by text', {
 		domain: "gateway",
-		pattern: /^(5|设置)/i,
+		pattern: /^(5|五|设置)/i,
 		handler: profile_features
 	});
 	webot.set('user profile links start by event', {

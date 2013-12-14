@@ -46,7 +46,7 @@ module.exports = function(webot) {
 	// 修改预约试驾提示语
 	webot.set('user reservation links start by text', {
 		domain: "gateway",
-		pattern: /^(1|预约)/i,
+		pattern: /^(1|一|预约)/i,
 		handler: reservation_features
 	});
 	webot.set('user reservation links start by event', {

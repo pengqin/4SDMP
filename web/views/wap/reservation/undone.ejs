@@ -1,0 +1,33 @@
+<%- include ../header %>
+<section id="reservation_view">
+    <header data-title="<%=title%>">
+        <h1 class="title centered"><%=title%></h1>
+        <!--nav class="on-right">
+            <a href="#" data-view-menu="menus" data-icon="menu"></a>
+        </nav-->
+    </header>
+	<article id="reservation-edit" class="list indented active">
+        <div class="form">
+            <label>正在建设...</label>
+            <br/>
+            <button id="saveBtn" class="anchor margin-bottom" data-icon="ok" data-label="保存"><span class="icon ok"></span></button>
+        </div>
+    </article>
+</section>
+<script>
+
+window.readyhandler = function() { 
+    $$('#saveBtn').tap(function() {
+        Lungo.Notification.show(
+            "check",                //Icon
+            "保存成功",              //Title
+            3,
+            function() {
+                Lungo.Notification.hide();
+            }
+        );
+    });
+};
+
+</script>
+<%- include ../footer %>

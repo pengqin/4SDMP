@@ -1,0 +1,58 @@
+<%- include ../header %>
+<section id="profile_view">
+    <header data-title="<%-title%>">
+        <h1 class="title centered"><%-title%></h1>
+        <!--nav class="on-right">
+            <a href="#" data-view-menu="menus" data-icon="menu"></a>
+        </nav-->
+    </header>
+	<article id="profile-edit" class="list indented active">
+        <div class="form">
+            <label>姓名:</label>
+            <input type="text" placeholder="请输入您的姓名" class="border">
+            <label>手机:</label>
+            <input type="text" placeholder="请输入您的手机号码" class="border">
+            <label>性别:</label>
+            <label class="select">
+                <select>
+                    <option value="1">先生</option>
+                    <option value="0">女士</option>
+                </select>
+            </label>
+            <label>车系:</label>
+            <label class="select">
+                <select>
+                    <option value="ix35">ix35</option>
+                    <option value="tusheng">途胜</option>
+                </select>
+            </label>
+            <label>车型:</label>
+            <label class="select">
+                <select>
+                    <option value="1">2.0 GL 2WD MT</option>
+                    <option value="2">2.0 GL 2WD AT</option>
+                </select>
+            </label>
+
+            <br/>
+            <button id="saveBtn" class="anchor margin-bottom" data-icon="ok" data-label="提交预约"><span class="icon ok"></span></button>
+        </div>
+    </article>
+</section>
+<script>
+
+window.readyhandler = function() { 
+    $$('#saveBtn').tap(function() {
+        Lungo.Notification.show(
+            "check",                //Icon
+            "保存成功",              //Title
+            3,
+            function() {
+                Lungo.Notification.hide();
+            }
+        );
+    });
+};
+
+</script>
+<%- include ../footer %>
