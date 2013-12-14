@@ -17,12 +17,12 @@ function profile_features(info, next) {
     }, {
         title: '密码修改',
         url: conf.site_root + '/wap/profile/'  + user.mobile +  '/password',
-        picUrl: conf.site_root + '/wap/images/profile_icon.png',
+        picUrl: conf.site_root + '/wap/images/profile_pwd.png',
         description: '密码修改'
     }, {
         title: '提醒服务',
         url: conf.site_root + '/wap/profile/' + user.mobile + '/reminder',
-        picUrl: conf.site_root + '/wap/images/profile_icon.png',
+        picUrl: conf.site_root + '/wap/images/profile_reminder.png',
         description: '提醒服务'
     }]);
 }
