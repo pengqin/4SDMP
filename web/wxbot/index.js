@@ -24,7 +24,7 @@ module.exports = function(webot) {
                     }
                 );
             var messages = [
-                "感谢您使用本店微信服务",
+                "感谢您使用本店微信服务\n",
                 link,
                 link2,
                 "回复数字使用本店服务：",
