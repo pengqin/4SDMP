@@ -47,7 +47,7 @@ function helper_normal(info, next) {
     }, {
         title: '出行出游',
         url: conf.site_root + '/wap/helper/loan?mobile='  + user.mobile,
-        picUrl: conf.site_root + '/wap/images/helper_loan.png?' + t,
+        picUrl: conf.site_root + '/wap/images/helper_travel.png?' + t,
         description: '出行出游'
     }, {
         title: '车险指南',

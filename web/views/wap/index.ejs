@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="stylesheet" href="/wap/vendor/metro/metro-bootstrap.css">
+        <style>
+        html {
+        	background-color: #000;
+        }
+        body {
+        	padding: 10px;
+        	background: url("/wap/images/index.png") bottom center no-repeat;
+
+        }
+        .metro .command-button {
+        	width:99%;
+        	height:4em;
+        	line-height:2em;
+        	margin: 0.4em 0em;
+        }
+        .metro .shortcut {
+        	width:49%;
+        	height:4em;
+        	line-height:2em;
+        	margin: 0.4em 0em;
+        }
+        </style>
+        <title>导航页</title>
+    </head>
+    <body class="metro">
+    	<div>
+    		<a href="/wap/store/1">
+		  	<button class="command-button warning large">
+		        <strong>最新车讯</strong>
+		        <small>点击这里了解更多热门车型</small>
+		    </button>
+			</a>
+		</div>
+    	<div>
+    		<a href="/wap/reservation/index">
+		  	<button class="command-button success large">
+		        <strong>试驾预约</strong>
+		        <small>点击这里在线预约试驾</small>
+		    </button>
+			</a>
+		</div>
+		<div>
+			<a href="/wap/reservation/repair">
+			<button class="shortcut primary" >
+	            售后预约
+	        </button>
+	    	</a>
+	        <button class="shortcut primary">
+	            提醒服务
+	        </button>
+		</div>
+		<div>
+			<button class="shortcut info">
+	            我的预约
+	        </button>
+	    	<a href="/wap/profile/1">
+	        <button class="shortcut info">
+	            个人资料
+	        </button>
+	    	</a>
+		</div>
+    </body>
+</html>

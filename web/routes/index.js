@@ -1,11 +1,13 @@
 /*
  * route to the wap
  */
+var indexRoutes = require('./wap/index.js');
 var storeRoutes = require('./wap/store.js');
 var reservationRoutes = require('./wap/reservation.js');
 var profileRoutes = require('./wap/profile.js');
 
 module.exports = function(app) {
+	app.get('/wap', indexRoutes.index);
 	app.get('/wap/store/:id', storeRoutes.index);
 	app.get('/wap/store/:id/activity', storeRoutes.activity);
 	app.get('/wap/store/:id/news', storeRoutes.news);

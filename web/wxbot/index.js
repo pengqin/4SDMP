@@ -16,11 +16,18 @@ module.exports = function(webot) {
                     {
                         url: conf.site_root + '/wap/store/1'
                     }
+                ),
+                link2 = ejs.render(
+                    '<a href="<%- url%>">点击这里进入快速导航页</a>\n', 
+                    {
+                        url: conf.site_root + '/wap/index'
+                    }
                 );
             var messages = [
                 "感谢您使用本店微信服务",
                 link,
-                "回复数字使用本店服务：",
+                link2,
+                "或回复数字使用本店服务：",
                 "【1】 预约服务",
                 "【2】 交易服务",
                 "【3】 行车助手",
