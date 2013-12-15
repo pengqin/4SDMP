@@ -2,6 +2,9 @@ body{font:1.0em tahoma,arial,\5b8b\4f53;}
 .indented form fieldset > label:not(.select):not(.anchor), .indented .form fieldset > label:not(.select):not(.anchor) {
 	margin: 0.42em 0em;
 }
+.spacing {
+	height: 50px;
+}
 #cars img {
 	width:100%;
 	max-width: 600px;
