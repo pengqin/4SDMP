@@ -20,7 +20,7 @@ module.exports = function(webot) {
                 link2 = ejs.render(
                     '<a href="<%- url%>">点击这里进入快速导航页</a>\n', 
                     {
-                        url: conf.site_root + '/wap/index'
+                        url: conf.site_root + '/wap/shortcut'
                     }
                 );
             var messages = [

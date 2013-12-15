@@ -7,7 +7,7 @@ var reservationRoutes = require('./wap/reservation.js');
 var profileRoutes = require('./wap/profile.js');
 
 module.exports = function(app) {
-	app.get('/wap', indexRoutes.index);
+	app.get('/wap/shortcut', indexRoutes.index);
 	app.get('/wap/store/:id', storeRoutes.index);
 	app.get('/wap/store/:id/activity', storeRoutes.activity);
 	app.get('/wap/store/:id/news', storeRoutes.news);
