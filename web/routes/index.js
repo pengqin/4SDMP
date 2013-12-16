@@ -19,5 +19,6 @@ module.exports = function(app) {
 	app.get('/wap/reservation/peds', reservationRoutes.peds);
 	app.get('/wap/profile/:id', profileRoutes.index);
 	app.get('/wap/profile/:id/password', profileRoutes.password);
+	app.get('/wap/profile/:id/reservation', profileRoutes.reservation);
 	app.get('/wap/profile/:id/reminder', profileRoutes.reminder);
 }

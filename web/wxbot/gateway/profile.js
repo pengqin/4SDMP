@@ -21,7 +21,7 @@ function profile_features(info, next) {
         description: '密码修改'
     }, {
         title: '我的预约',
-        url: conf.site_root + '/wap/profile/'  + user.mobile +  '/password',
+        url: conf.site_root + '/wap/profile/'  + user.mobile +  '/reservation',
         picUrl: conf.site_root + '/wap/images/profile_reservation.png?' + t,
         description: '密码修改'
     }, {
