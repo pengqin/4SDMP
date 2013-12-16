@@ -25,10 +25,10 @@ function profile_features(info, next) {
         picUrl: conf.site_root + '/wap/images/profile_reservation.png?' + t,
         description: '密码修改'
     }, {
-        title: '提醒服务',
+        title: '我的提醒',
         url: conf.site_root + '/wap/profile/' + user.mobile + '/reminder',
         picUrl: conf.site_root + '/wap/images/profile_reminder.png?' + t,
-        description: '提醒服务'
+        description: '我的提醒'
     }]);
 }
 
