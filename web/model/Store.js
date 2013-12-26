@@ -1,39 +1,24 @@
 var extend = require('util')._extend;
 var restful = require('node-restful');
-var rest = require('restler');
 var mongoose = restful.mongoose, Schema = mongoose.Schema;
-var Store;
+var Store, Employee = require("./Employee");
 
 module.exports = function(mongoose) {
-	if (!Store) { 
+	if (!Store) {
+		// 模型定义和基本CRUD 
 		Store = restful.model('Store', mongoose.Schema({
-			clubId :     { type: String, index: true }, // 所在会所
-			city:        { type: String }, // 所在城市
-			name   :     { type: String, default: 'unamed'}, // 名称
-			address:     { type: String, default: ''}, // 地址
-			route:     { type: String, default: ''}, // 交通指引
-			phone  :     { type: String, default: ''}, // 门店电话
-			manager  :   { type: Object }, // 冗余信息 门店经理
-			employees:   { type: Array, default: []}, // 下属员工ID数组
-			rooms:       { type: Array, default: []}, // 活动场所 _id 为 某个timestamp 无需管理
-			description: { type: String, default: ''}, // 描述文字
-			route: 		 { type: String, default: ''}, // 交通路线
-			enabled:     { type: Boolean, default: true}, // 启用
-		  	archived:    { type: Boolean, default: false} // 是否存档
+			name   :  { type: String, default: '未命名的4S店'},
+			owner  :  { type: Object }, // 冗余信息 4S店负责人
+			employees:{ type: Array, default: []}, // 下属员工的ID,角色,是否激活,绑定的OpenId信息
+		  	openIds : { type: Array, default: []}, // 绑定的OpenID 支持一店多绑
+			enabled:  { type: Boolean, default: true}, // 启用
+		  	archived: { type: Boolean, default: false} // 是否存档
 		}))
 		.methods(['get', 'post', 'put']);
 
-		// 默认密码为手机后四位,否则为Passw0rd
-		Store.before('post', function(req, res, next) {
-			if (!req.body.clubId) {
-				res.json(500, {err: "club id is not provided"});
-				return next();
-			}
-			next();
-		});
-
+		/*
 		Store.extend = function(app) {
-			// 获得该会所下所有员工
+			// 获得该4S店下所有员工
 			app.get("/api/store/:id/employee", function(req, res) {
 				restful.model('Store').findById(req.params.id).exec(function(err, store) {
 					if (err) {
@@ -47,7 +32,7 @@ module.exports = function(mongoose) {
 						employeesMap[employees[i]._id] = employees[i];
 						ids.push(employees[i]._id);
 					}
-					restful.model('User').find({_id: {$in: ids}}, {password: 0, wxaccounts:0}).exec(function(err, results) {
+					restful.model('Employee').find({_id: {$in: ids}}, {password: 0, openIds:0}).exec(function(err, results) {
 						var users = [];
 						if (err) {
 							return res.json(500, err);
@@ -64,10 +49,32 @@ module.exports = function(mongoose) {
 					});
 				});
 			});
-			// 创建该会所下员工，并更新store的employees
+			// 创建该4S店下员工，并更新store的employees
 			app.post("/api/store/:id/employee", function(req, res) {
 				if (!req.body._id) {
-					return res.json(400, {err: 'employee id is not provided'});
+					var user = new restful.model('Employee')(req.body);
+					user.save(function(err, user) {
+						if (err) {
+							return res.json(500, err);
+						}
+						if (!user) {
+							return res.json(500, {err: "failed to create a new employee."});
+						}
+						restful.model('Store').findById(req.params.id).exec(function(err, store) {
+							if (err) {
+								return res.json(500, err);
+							}
+							if (!store || !store.employees) {
+								return res.json(500, {err: "failed to get the employees"})
+							}
+							restful.model('Store').update({_id: store._id}, {$push:{"employees": {_id: user._id, role: 'employee', enabled: true}}}).exec(function(err, newstore) {
+								if (err) {
+									return res.json(500, err);
+								}
+								return res.json(201, user);
+							})
+						});
+					});
 				} else {
 					restful.model('Store').findById(req.params.id).exec(function(err, store) {
 						if (err) {
@@ -85,7 +92,7 @@ module.exports = function(mongoose) {
 					});
 				}
 			});
-		}
+		}*/
 	}
 	return Store;
 }
